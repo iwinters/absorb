@@ -16,6 +16,7 @@
 
 package org.pocketworkstation.pckeyboard;
 
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -106,16 +107,19 @@ public class Suggest implements Dictionary.WordCallback {
     private int mCorrectionMode = CORRECTION_BASIC;
 
     public Suggest(Context context, int[] dictionaryResId) {
-        mMainDict = new BinaryDictionary(context, dictionaryResId, DIC_MAIN);
-        if (!hasMainDictionary()) {
-            Locale locale = context.getResources().getConfiguration().locale;
-            BinaryDictionary plug = PluginManager.getDictionary(context, locale.getLanguage());
-            if (plug != null) {
-                mMainDict.close();
-                mMainDict = plug;
+        try {
+            mMainDict = new BinaryDictionary(context, dictionaryResId, DIC_MAIN);
+            if (!hasMainDictionary()) {
+                Locale locale = context.getResources().getConfiguration().locale;
+                BinaryDictionary plug = PluginManager.getDictionary(context, locale.getLanguage());
+                if (plug != null) {
+                    mMainDict.close();
+                    mMainDict = plug;
+                }
             }
-        }
-        initPool();
+            initPool();
+        }catch(IOException f){}
+
     }
 
     public Suggest(Context context, ByteBuffer byteBuffer) {

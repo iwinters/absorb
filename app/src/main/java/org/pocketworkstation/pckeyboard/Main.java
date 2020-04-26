@@ -33,7 +33,6 @@ import android.widget.Toast;
 import android.widget.TextView.BufferType;
 
 public class Main extends Activity {
-
     private final static String MARKET_URI = "market://search?q=pub:\"Klaus Weidner\"";
 
     @Override
@@ -46,6 +45,7 @@ public class Main extends Activity {
         TextView description = (TextView) findViewById(R.id.main_description);
         description.setMovementMethod(LinkMovementMethod.getInstance());
         description.setText(content, BufferType.SPANNABLE);
+
 
 
         final Button setup1 = (Button) findViewById(R.id.main_setup_btn_configure_imes);

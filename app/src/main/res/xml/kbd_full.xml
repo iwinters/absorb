@@ -21,10 +21,11 @@
 <Keyboard
     xmlns:android="http://schemas.android.com/apk/res-auto"
     android:keyWidth="7.1428571485%p"
-    android:horizontalGap="0px"
+    android:horizontalGap="3px"
     android:verticalGap="@dimen/key_bottom_gap"
     android:layoutRows="5"
     android:layoutColumns="14"
+    android:keyHeight="57dp"
 >
     <Row android:rowEdgeFlags="top" android:extension="true">
         <Key android:keyLabel="F1" android:codes="@integer/key_fkey_f1" android:isModifier="true" android:keyEdgeFlags="left"/>
@@ -353,6 +354,7 @@
     </Row>
     <Row
         android:rowEdgeFlags="bottom"
+        android:verticalGap="4px"
     >
         <Key
             android:keyLabel="Esc"
@@ -378,7 +380,7 @@
             android:shiftLabel="@string/key_space_shift"
             android:keyIcon="@drawable/sym_keyboard_space"
             android:iconPreview="@drawable/sym_keyboard_feedback_space"
-            android:keyWidth="32.1428571372%p"
+            android:keyWidth="38%p"
             android:isModifier="true" />
         <Key
             android:codes="@integer/key_fn"

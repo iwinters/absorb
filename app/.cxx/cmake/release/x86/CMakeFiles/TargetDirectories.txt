@@ -1,0 +1,3 @@
+C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/.cxx/cmake/release/x86/CMakeFiles/jni_pckeyboard.dir
+C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/.cxx/cmake/release/x86/CMakeFiles/edit_cache.dir
+C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/.cxx/cmake/release/x86/CMakeFiles/rebuild_cache.dir

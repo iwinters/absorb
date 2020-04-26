@@ -21,6 +21,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.inputmethod.EditorInfo;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;

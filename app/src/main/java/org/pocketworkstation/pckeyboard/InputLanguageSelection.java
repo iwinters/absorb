@@ -16,6 +16,7 @@
 
 package org.pocketworkstation.pckeyboard;
 
+import java.io.IOException;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -221,7 +222,12 @@ public class InputLanguageSelection extends PreferenceActivity {
         if (bd.getSize() > Suggest.LARGE_DICTIONARY_THRESHOLD / 4) {
             haveDictionary = true;
         } else {
-            BinaryDictionary plug = PluginManager.getDictionary(getApplicationContext(), locale.getLanguage());
+            BinaryDictionary plug = null;
+            try {
+                plug = PluginManager.getDictionary(getApplicationContext(), locale.getLanguage());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             if (plug != null) {
                 bd.close();
                 bd = plug;

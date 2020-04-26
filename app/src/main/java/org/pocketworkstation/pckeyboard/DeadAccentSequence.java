@@ -16,6 +16,7 @@
 
 package org.pocketworkstation.pckeyboard;
 
+import java.io.IOException;
 import java.text.Normalizer;
 
 import android.os.Build;

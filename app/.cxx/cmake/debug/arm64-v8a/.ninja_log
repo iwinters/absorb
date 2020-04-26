@@ -1,0 +1,5 @@
+# ninja log v5
+1	194	608928550	CMakeFiles/jni_pckeyboard.dir/src/main/cpp/char_utils.cpp.o	2bcf7309591cbc16
+5	241	608928550	CMakeFiles/jni_pckeyboard.dir/src/main/cpp/dictionary.cpp.o	22bffa5ab2071c1d
+9	246	608928550	CMakeFiles/jni_pckeyboard.dir/src/main/cpp/org_pocketworkstation_pckeyboard_BinaryDictionary.cpp.o	87c721be81697cc7
+247	466	608928551	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libjni_pckeyboard.so	140a96109ee18028

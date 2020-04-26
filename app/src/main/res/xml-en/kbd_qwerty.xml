@@ -485,6 +485,7 @@
     <Row
         android:keyboardMode="@+id/mode_webentry_with_settings_key"
         android:rowEdgeFlags="bottom"
+        android:verticalGap="4px"
     >
         <Key
             android:codes="@integer/key_symbol"

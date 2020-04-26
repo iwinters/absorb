@@ -45,7 +45,7 @@ public class PluginManager extends BroadcastReceiver {
     }
 
     static interface DictPluginSpec {
-        BinaryDictionary getDict(Context context);
+        BinaryDictionary getDict(Context context) throws IOException;
     }
 
     static void getSoftKeyboardDictionaries(PackageManager packageManager) {
@@ -100,7 +100,7 @@ public class PluginManager extends BroadcastReceiver {
                 } catch (XmlPullParserException e) {
                     Log.e(TAG, "Dictionary XML parsing failure");
                 } catch (IOException e) {
-                    Log.e(TAG, "Dictionary XML IOException");
+                    e.printStackTrace();
                 }
 
                 if ((assetName == null && resId == 0) || lang == null) continue;
@@ -181,9 +181,9 @@ public class PluginManager extends BroadcastReceiver {
             return res;
         }
 
-        abstract InputStream[] getStreams(Resources res);
+        abstract InputStream[] getStreams(Resources res) throws IOException;
 
-        public BinaryDictionary getDict(Context context) {
+        public BinaryDictionary getDict(Context context) throws IOException {
             Resources res = getResources(context);
             if (res == null) return null;
 
@@ -202,7 +202,7 @@ public class PluginManager extends BroadcastReceiver {
         Log.i(TAG, "Package information changed, updating dictionaries.");
         getPluginDictionaries(context);
         Log.i(TAG, "Finished updating dictionaries.");
-        mIME.toggleLanguage(true, true);
+            mIME.toggleLanguage(true, true);
     }
 
     static private class DictPluginSpecHK
@@ -239,7 +239,7 @@ public class PluginManager extends BroadcastReceiver {
         }
 
         @Override
-        InputStream[] getStreams(Resources res) {
+        InputStream[] getStreams(Resources res) throws IOException {
             if (mAssetName == null) {
                 if (mResId == 0) return null;
                 TypedArray a = res.obtainTypedArray(mResId);
@@ -258,13 +258,8 @@ public class PluginManager extends BroadcastReceiver {
                 }
                 return in;
             } else {
-                try {
                     InputStream in = res.getAssets().open(mAssetName);
                     return new InputStream[]{in};
-                } catch (IOException e) {
-                    Log.e(TAG, "Dictionary asset loading failure");
-                    return null;
-                }
             }
         }
     }
@@ -276,7 +271,7 @@ public class PluginManager extends BroadcastReceiver {
         getHKDictionaries(packageManager);
     }
 
-    static BinaryDictionary getDictionary(Context context, String lang) {
+    static BinaryDictionary getDictionary(Context context, String lang) throws IOException {
         //Log.i(TAG, "Looking for plugin dictionary for lang=" + lang);
         DictPluginSpec spec = mPluginDicts.get(lang);
         if (spec == null) spec = mPluginDicts.get(lang.substring(0, 2));

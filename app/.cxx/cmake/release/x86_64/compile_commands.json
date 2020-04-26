@@ -1,0 +1,19 @@
+[
+{
+  "directory": "C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/.cxx/cmake/release/x86_64",
+  "command": "C:\\Users\\isaac\\AppData\\Local\\Android\\Sdk\\ndk\\20.0.5594570\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android21 --gcc-toolchain=C:/Users/isaac/AppData/Local/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/isaac/AppData/Local/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Djni_pckeyboard_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o CMakeFiles\\jni_pckeyboard.dir\\src\\main\\cpp\\org_pocketworkstation_pckeyboard_BinaryDictionary.cpp.o -c C:\\Users\\isaac\\Documents\\GitHub\\hackerskeyboard\\app\\src\\main\\cpp\\org_pocketworkstation_pckeyboard_BinaryDictionary.cpp",
+  "file": "C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/src/main/cpp/org_pocketworkstation_pckeyboard_BinaryDictionary.cpp"
+},
+
+{
+  "directory": "C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/.cxx/cmake/release/x86_64",
+  "command": "C:\\Users\\isaac\\AppData\\Local\\Android\\Sdk\\ndk\\20.0.5594570\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android21 --gcc-toolchain=C:/Users/isaac/AppData/Local/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/isaac/AppData/Local/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Djni_pckeyboard_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o CMakeFiles\\jni_pckeyboard.dir\\src\\main\\cpp\\dictionary.cpp.o -c C:\\Users\\isaac\\Documents\\GitHub\\hackerskeyboard\\app\\src\\main\\cpp\\dictionary.cpp",
+  "file": "C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/src/main/cpp/dictionary.cpp"
+},
+
+{
+  "directory": "C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/.cxx/cmake/release/x86_64",
+  "command": "C:\\Users\\isaac\\AppData\\Local\\Android\\Sdk\\ndk\\20.0.5594570\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android21 --gcc-toolchain=C:/Users/isaac/AppData/Local/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/isaac/AppData/Local/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Djni_pckeyboard_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -o CMakeFiles\\jni_pckeyboard.dir\\src\\main\\cpp\\char_utils.cpp.o -c C:\\Users\\isaac\\Documents\\GitHub\\hackerskeyboard\\app\\src\\main\\cpp\\char_utils.cpp",
+  "file": "C:/Users/isaac/Documents/GitHub/hackerskeyboard/app/src/main/cpp/char_utils.cpp"
+}
+]

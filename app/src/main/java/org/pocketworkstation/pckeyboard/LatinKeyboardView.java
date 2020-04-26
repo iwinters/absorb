@@ -16,6 +16,7 @@
 
 package org.pocketworkstation.pckeyboard;
 
+import java.io.IOException;
 import java.util.List;
 
 import android.content.Context;
@@ -352,9 +353,9 @@ public class LatinKeyboardView extends LatinKeyboardBaseView {
         if (me.getAction() == MotionEvent.ACTION_UP) {
             int languageDirection = keyboard.getLanguageChangeDirection();
             if (languageDirection != 0) {
-                getOnKeyboardActionListener().onKey(
-                        languageDirection == 1 ? KEYCODE_NEXT_LANGUAGE : KEYCODE_PREV_LANGUAGE,
-                        null, mLastX, mLastY);
+                    getOnKeyboardActionListener().onKey(
+                            languageDirection == 1 ? KEYCODE_NEXT_LANGUAGE : KEYCODE_PREV_LANGUAGE,
+                            null, mLastX, mLastY);
                 me.setAction(MotionEvent.ACTION_CANCEL);
                 keyboard.keyReleased();
                 return super.onTouchEvent(me);
@@ -381,40 +382,40 @@ public class LatinKeyboardView extends LatinKeyboardBaseView {
                 translated.recycle();
                 if (me.getAction() == MotionEvent.ACTION_UP
                         || me.getAction() == MotionEvent.ACTION_CANCEL) {
-                    closeExtension();
+                        closeExtension();
                 }
                 return result;
             } else {
-                if (swipeUp()) {
-                    return true;
-                } else if (openExtension()) {
-                    MotionEvent cancel = MotionEvent.obtain(me.getDownTime(), me.getEventTime(),
-                            MotionEvent.ACTION_CANCEL, me.getX() - 100, me.getY() - 100, 0);
-                    super.onTouchEvent(cancel);
-                    cancel.recycle();
-                    if (mExtension.getHeight() > 0) {
-                        MotionEvent translated = MotionEvent.obtain(me.getEventTime(),
-                                me.getEventTime(),
-                                MotionEvent.ACTION_DOWN,
-                                me.getX(), me.getY() + mExtension.getHeight(),
-                                me.getMetaState());
-                        mExtension.onTouchEvent(translated);
-                        translated.recycle();
-                    } else {
-                        mFirstEvent = true;
+                    if (swipeUp()) {
+                        return true;
+                    } else if (openExtension()) {
+                        MotionEvent cancel = MotionEvent.obtain(me.getDownTime(), me.getEventTime(),
+                                MotionEvent.ACTION_CANCEL, me.getX() - 100, me.getY() - 100, 0);
+                        super.onTouchEvent(cancel);
+                        cancel.recycle();
+                        if (mExtension.getHeight() > 0) {
+                            MotionEvent translated = MotionEvent.obtain(me.getEventTime(),
+                                    me.getEventTime(),
+                                    MotionEvent.ACTION_DOWN,
+                                    me.getX(), me.getY() + mExtension.getHeight(),
+                                    me.getMetaState());
+                            mExtension.onTouchEvent(translated);
+                            translated.recycle();
+                        } else {
+                            mFirstEvent = true;
+                        }
+                        // Stop processing multi-touch errors
+                        mDisableDisambiguation  = true;
                     }
-                    // Stop processing multi-touch errors
-                    mDisableDisambiguation  = true;
-                }
                 return true;
             }
         } else if (mExtensionVisible) {
-            closeExtension();
+                closeExtension();
             // Send a down event into the main keyboard first
             MotionEvent down = MotionEvent.obtain(me.getEventTime(), me.getEventTime(),
                     MotionEvent.ACTION_DOWN,
                     me.getX(), me.getY(), me.getMetaState());
-            super.onTouchEvent(down, true);
+                super.onTouchEvent(down, true);
             down.recycle();
             // Send the actual event
             return super.onTouchEvent(me);
@@ -501,7 +502,7 @@ public class LatinKeyboardView extends LatinKeyboardBaseView {
         public void onRelease(int primaryCode) {
             mTarget.onRelease(primaryCode);
         }
-        public void onText(CharSequence text) {
+        public void onText(CharSequence text){
             mTarget.onText(text);
         }
         public void onCancel() {

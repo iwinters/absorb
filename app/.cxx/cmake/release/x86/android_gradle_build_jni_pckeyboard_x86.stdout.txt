@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\Users\isaac\Documents\GitHub\hackerskeyboard\app\.cxx\cmake\release\x86'
+ninja: no work to do.

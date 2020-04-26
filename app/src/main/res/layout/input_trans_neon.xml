@@ -33,7 +33,7 @@
         latin:keyHintColor="#FFAAAAAA"
         latin:keyCursorColor="#FFFFFFFF"
         latin:shadowColor="#FF33B5E5"
-        latin:shadowRadius="9"
+        latin:shadowRadius="0"
         latin:keyTextStyle="bold"
         latin:recolorSymbols="true"
         latin:backgroundAlpha="32"

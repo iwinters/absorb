@@ -308,7 +308,7 @@ public class LatinKeyboardBaseView extends View implements PointerTracker.UIProx
                     break;
                 case MSG_REPEAT_KEY: {
                     final PointerTracker tracker = (PointerTracker)msg.obj;
-                    tracker.repeatKey(msg.arg1);
+                        tracker.repeatKey(msg.arg1);
                     startKeyRepeatTimer(mKeyRepeatInterval, msg.arg1, tracker);
                     break;
                 }
@@ -501,7 +501,7 @@ public class LatinKeyboardBaseView extends View implements PointerTracker.UIProx
                 mKeyTextSize = a.getDimensionPixelSize(attr, 18);
                 break;
             case R.styleable.LatinKeyboardBaseView_keyTextColor:
-                mKeyTextColor = a.getColor(attr, 0xFF000000);
+                mKeyTextColor = a.getColor(attr, 000000);
                 break;
             case R.styleable.LatinKeyboardBaseView_keyHintColor:
                 mKeyHintColor = a.getColor(attr, 0xFFBBBBBB);
@@ -602,19 +602,22 @@ public class LatinKeyboardBaseView extends View implements PointerTracker.UIProx
 //                        + " dX=" + deltaX + " dy=" + deltaY + " min=" + travelMin);
                 if (velocityX > mSwipeThreshold && absY < absX && deltaX > travelMin) {
                     if (mDisambiguateSwipe && endingVelocityX >= velocityX / 4) {
-                        if (swipeRight()) return true;
+
+                            if (swipeRight()) return true;
                     }
                 } else if (velocityX < -mSwipeThreshold && absY < absX && deltaX < -travelMin) {
                     if (mDisambiguateSwipe && endingVelocityX <= velocityX / 4) {
-                        if (swipeLeft()) return true;
+                            if (swipeLeft()) return true;
+
                     }
                 } else if (velocityY < -mSwipeThreshold && absX < absY && deltaY < -travelMin) {
                     if (mDisambiguateSwipe && endingVelocityY <= velocityY / 4) {
-                        if (swipeUp()) return true;
+                            if (swipeUp()) return true;
                     }
                 } else if (velocityY > mSwipeThreshold && absX < absY / 2 && deltaY > travelMin) {
                     if (mDisambiguateSwipe && endingVelocityY >= velocityY / 4) {
-                        if (swipeDown()) return true;
+                            if (swipeDown()) return true;
+
                     }
                 }
                 return false;
@@ -1602,7 +1605,7 @@ public class LatinKeyboardBaseView extends View implements PointerTracker.UIProx
 
     @Override
     public boolean onTouchEvent(MotionEvent me) {
-        return onTouchEvent(me, false);
+            return onTouchEvent(me, false);
     }
 
     public boolean onTouchEvent(MotionEvent me, boolean continuing) {
@@ -1753,11 +1756,11 @@ public class LatinKeyboardBaseView extends View implements PointerTracker.UIProx
         mPointerQueue.remove(tracker);
     }
 
-    protected boolean swipeRight() {
+    protected boolean swipeRight(){
         return mKeyboardActionListener.swipeRight();
     }
 
-    protected boolean swipeLeft() {
+    protected boolean swipeLeft(){
         return mKeyboardActionListener.swipeLeft();
     }
 
@@ -1794,14 +1797,14 @@ public class LatinKeyboardBaseView extends View implements PointerTracker.UIProx
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         //Log.i(TAG, "onDetachedFromWindow() for " + this);
-        closing();
+            closing();
     }
 
     protected boolean popupKeyboardIsShowing() {
         return mMiniKeyboardPopup != null && mMiniKeyboardPopup.isShowing();
     }
 
-    protected void dismissPopupKeyboard() {
+    protected void dismissPopupKeyboard(){
         if (mMiniKeyboardPopup != null) {
             //Log.i(TAG, "dismissPopupKeyboard() " + mMiniKeyboardPopup + " showing=" + mMiniKeyboardPopup.isShowing());
             if (mMiniKeyboardPopup.isShowing()) {
